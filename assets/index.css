@@ -135,6 +135,18 @@ body {
     cursor: pointer;
 }
 
+.restart {
+    height: 5vh;
+    width: 15vh;
+    border-radius: 1em;
+    margin-top: 18px;
+    margin-left: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #ff0015;
+    color: #fff;
+}
+
 .check {
     height: 5vh;
     width: 15vh;

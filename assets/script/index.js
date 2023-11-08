@@ -28,6 +28,7 @@ const startBtn = select('.start')
 const initialDialog = select('.dialog-window')
 const executeBtn = select('.execute')
 const start = select('.check')
+const restartBtn = select('.restart')
 /*--------------------------------------------------------------------*/
 
 let challenge = [
@@ -117,7 +118,6 @@ function answerValidation () {
     let process = solution[random][0]
 
     if (answer === process) {
-        
         switch (true) {
             case random === 0:
                 result.classList.add('random-1')
@@ -140,14 +140,13 @@ function answerValidation () {
             case random === 3:
                 result.classList.add('random-4')
         }
-            
     } else {
         result.textContent = 'Try again'
     }
-
-    console.log(answer)
-    console.log(process)
 }
 
 onEvent(executeBtn, 'click', answerValidation)
+onEvent(restartBtn, 'click', () => {
+    location.reload();
+})
 
