@@ -19,50 +19,54 @@ function onEvent (selector, event, callback) {
 /*--------------------------------------------------------------------*/
 
 /*--------------------------- HTML Elements --------------------------*/
-const statement = select('.statement')
+const statement = select('.statement p')
 const result = select('.result')
 const codeStructure = select('.code-structure')
+const contentGame = select('.content-game')
+const title = select('.title')
+const startBtn = select('.start')
+const initialDialog = select('.dialog-window')
+const executeBtn = select('.execute')
+const start = select('.check')
 /*--------------------------------------------------------------------*/
 
 let challenge = [
     "Objetive: Get a beige circle that have the class 'circle' with a blue dotted border and with the phrase 'I am a cool circle' inside of it",
     "Objetive: Get a square with an id 'my-square', with the top and left border blue and the right and bottom border white and dashed. Also the background most be goldenrod",
-    "Objetive: Organize the JS code to obtain the given name printed",
-    "Objetive: Organize the JS code to obtain the result of a sum"
+    "Objetive: Organize the JS code to get the given name printed",
+    "Objetive: Organize the JS code to get the result of a sum"
 ];
 
 let codePrompt = [
-    `#circle [
-    bacground: beigge;
+    [`cirqle [
+    background: beige;
     border: 1px solid;
-    contnet: 'Im a great squar'
-]`,
-    `.my-squre {
-    border-left: 1px solid yelwo;
-    boder-right: 1px groove;
-    border-op: 1px solid blue;
-    border-bottom: 1px groove;
-    backgound: golden boy;
-]`,
-    `function printName(name){
-    if(name)
-    {
-    console.log('Hello, ' + name);
-    } else{
-        console.log('Name is not provided');
+    content: 'I'm a great square';
+}`],
+    [`.my-square {
+    boder-left: 1px soli yelow;
+    border-right: 1px groove;
+    border-top: 1px solid blue;
+    boder-bottom = 1px transparent;
+    background: golden boy;
+]`],
+    [`funckion printName {name} (
+    if (name) [
+      console.log('Hello, ' + name);
+    } else [
+      console.print('Name is not provided');
     }
-}
+)
     
 let personName = "Alice";
-printName(personName);`,
-    `function calculateSum(a, b){
-    return a + b;
+print name(personName);`],
+    [`function c$lculate Rest (a, b) {
+    return "a" + "b";
 }
     
-let result = calculateSum(5, 10);
-console.log("The result is: " + result);`
+var result = calculateSum(5, 10);
+console.table("The result is: " + result);`],
 ];
-
 
 let solution = [
     `.circle {
@@ -96,3 +100,15 @@ let result = calculateSum(5, 10);
 console.log("The result is: " + result);`
 ];
 
+onEvent(startBtn, 'click', () => {
+    title.style.display = 'grid';
+    contentGame.style.display = 'block';
+    initialDialog.style.display = 'none';
+})
+
+let random = Math.floor(Math.random() * 3)
+
+onEvent(executeBtn, 'click', () => {
+    statement.textContent = challenge[random] 
+    codeStructure.textContent = codePrompt[random].join('\n');
+})

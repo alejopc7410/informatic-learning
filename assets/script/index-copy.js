@@ -19,7 +19,9 @@ function onEvent (selector, event, callback) {
 /*--------------------------------------------------------------------*/
 
 /*--------------------------- HTML Elements --------------------------*/
-
+const statement = select('.statement')
+const result = select('.result')
+const codeStructure = select('.code-structure')
 /*--------------------------------------------------------------------*/
 
 let challenge = [
@@ -30,37 +32,42 @@ let challenge = [
 ];
 
 let codePrompt = [
-    `#circle [
-    bacground: beigge;
+    [`#circle {
+    background: beige;
     border: 1px solid;
-    contnet: 'Im a great squar'
-]`,
-    `.my-squre {
-    border-left: 1px solid yelwo;
-    boder-right: 1px groove;
-    border-op: 1px solid blue;
+    content: 'I'm a great square';
+    }`],
+    [`.my-square {
+    border-left: 1px solid yellow;
+    border-right: 1px groove;
+    border-top: 1px solid blue;
     border-bottom: 1px groove;
-    backgound: golden boy;
-]`,
-    `function printName(name){
-    if(name)
-    {
-    console.log('Hello, ' + name);
-    } else{
-        console.log('Name is not provided');
+    background: golden boy;
+    }`],
+    [`function printName(name) {
+    if (name) {
+      console.log('Hello, ' + name);
+    } else {
+      console.log('Name is not provided');
     }
-}
+  }
     
-let personName = "Alice";
-printName(personName);`,
-    `function calculateSum(a, b){
+  let personName = "Alice";
+  printName(personName);`],
+    [`function calculateSum(a, b) {
     return a + b;
-}
+  }
     
-let result = calculateSum(5, 10);
-console.log("The result is: " + result);`
-];
-
+  let result = calculateSum(5, 10);
+  console.log("The result is: " + result);`],
+  ];
+  
+let random = Math.floor(Math.random() * 3) 
+let htmlCode = codePrompt[random].join('\n');
+  
+  // Luego, puedes insertar 'htmlCode' en un elemento HTML (por ejemplo, un div) usando innerHTML.
+codeStructure.innerHTML = htmlCode;
+  
 
 let solution = [
     `.circle {
@@ -94,4 +101,4 @@ let result = calculateSum(5, 10);
 console.log("The result is: " + result);`
 ]
 console.log(codePrompt[3])
-console.log(solution[3])
+console.log(solution[2])
