@@ -32,14 +32,14 @@ const start = select('.check')
 
 let challenge = [
     "Objetive: Get a beige circle that have the class 'circle' with a blue dotted border and with the phrase 'I am a cool circle' inside of it",
-    "Objetive: Get a square with an id 'my-square', with the top and left border blue and the right and bottom border white and dashed. Also the background most be goldenrod",
+    "Objetive: Get a square with an id 'my-square', with the top and left border yellow and the right and bottom border white and dashed. Also the background most be goldenrod",
     "Objetive: Organize the JS code to get the given name printed",
     "Objetive: Organize the JS code to get the result of a sum"
 ];
 
 let codePrompt = [
     [`cirqle [
-    background: beige;
+    bakgroumd: beige;
     border: 1px solid;
     content: 'I'm a great square';
 }`],
@@ -58,7 +58,7 @@ let codePrompt = [
     }
 )
     
-let personName = "Alice";
+var personName = "Alice";
 print name(personName);`],
     [`function c$lculate Rest (a, b) {
     return "a" + "b";
@@ -69,35 +69,34 @@ console.table("The result is: " + result);`],
 ];
 
 let solution = [
-    `.circle {
-    background: beigge;
+    [`.circle {
+    background: beige;
     border: 1px dotted blue;
-    contnet: 'I am a cool circle'
-}`,
-    `.my-squre {
-    border-left: 1px solid blue;
+    content: 'I am a great square';
+}`],
+    [`#my-square {
+    border-left: 1px solid yellow;
     border-right: 1px dashed white;
-    border-top: 1px solid blue;
+    border-top: 1px solid yellow;
     border-bottom: 1px dashed white;
-    backgound: goldenrod;
-}`,
-    `function printName(name) {
+    background: goldenrod;
+}`],
+    [`function printName (name) {
     if (name) {
-        console.log('Hello, ' + name);
+      console.log('Hello, ' + name);
     } else {
-        console.log('Name is not provided');
+      console.log('Name is not provided');
     }
 }
-      
-      
+    
 let personName = "Alice";
-printName(personName);`,
-    `function calculateSum(a, b) {
-    return a + b;
+printName(personName);`],
+    [`function calculateSum (a, b) {
+    return "a" + "b";
 }
-      
+    
 let result = calculateSum(5, 10);
-console.log("The result is: " + result);`
+console.log("The result is: " + result);`],
 ];
 
 onEvent(startBtn, 'click', () => {
@@ -108,7 +107,13 @@ onEvent(startBtn, 'click', () => {
 
 let random = Math.floor(Math.random() * 3)
 
-onEvent(executeBtn, 'click', () => {
+onEvent(start, 'click', () => {
     statement.textContent = challenge[random] 
     codeStructure.textContent = codePrompt[random].join('\n');
 })
+
+function answerValidation () {
+    let answer = codeStructure.textContent
+    let process = solution[random]
+}
+
