@@ -19,9 +19,7 @@ function onEvent (selector, event, callback) {
 /*--------------------------------------------------------------------*/
 
 /*--------------------------- HTML Elements --------------------------*/
-const statement = select('.statement')
-const result = select('.result')
-const codeStructure = select('.code-structure')
+
 /*--------------------------------------------------------------------*/
 
 let challenge = [
@@ -94,5 +92,6 @@ printName(personName);`,
       
 let result = calculateSum(5, 10);
 console.log("The result is: " + result);`
-];
-
+]
+console.log(codePrompt[3])
+console.log(solution[3])
