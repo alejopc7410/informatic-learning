@@ -30,7 +30,7 @@ body {
     background-color: rgb(0 0 0 / 0.4);
     width: 100%;
     height: 100%;
-    display: none;
+    display: grid;
     place-items: center;
     overflow: hidden;
 }
@@ -64,8 +64,8 @@ body {
 
 .dialog-window p:nth-child(3) {
     background: red;
-    height: 14vh;
-    padding-top: 10px;
+    min-height: 11vh;
+    padding: 10px 15px;
     text-align: center;
     color: #000;
 }
@@ -86,13 +86,13 @@ body {
 /*-----------------------------------------------------*/
 
 .content-game {
-    /* display: none; */
+    display: none;
 }
 .title {
     width: calc(100%);
     height: 19vh;
     background: rgb(0 0 0 / 0.4);
-    display: grid;
+    display: none;
     place-items: center;
 }
 
@@ -187,8 +187,50 @@ body {
     place-items: center;
 }
 
-.result::before {
-    color: white;
-    content: "";
-    color: gol;
+/*------------------ Variables of the game -----------------------*/
+.random-1 {
+    height: 20vh;
+    width: 20vh;
+    display: grid;
+    place-items: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50%;
 }
+
+.random-2 {
+    height: 20vh;
+    width: 20vh;
+    display: grid;
+    place-items: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.random-3 {
+    height: 40vh;
+    width: 40vh;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 10vh;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.random-4 {
+    height: 40vh;
+    width: 40vh;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 5.5vh;
+    font-weight: 700;
+    text-align: center;
+}
+/*-----------------------------------------------------------*/

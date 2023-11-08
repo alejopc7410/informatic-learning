@@ -113,7 +113,41 @@ onEvent(start, 'click', () => {
 })
 
 function answerValidation () {
-    let answer = codeStructure.textContent
-    let process = solution[random]
+    let answer = codeStructure.value
+    let process = solution[random][0]
+
+    if (answer === process) {
+        
+        switch (true) {
+            case random === 0:
+                result.classList.add('random-1')
+                result.style.background = 'beige'
+                result.style.border = '2.5px dotted blue'
+                result.textContent = 'I am a cool circle'
+                break;
+            case random === 1:
+                result.classList.add('random-2')
+                result.style.borderLeft = '1px solid yellow';
+                result.style.borderRight = '1px dashed white';
+                result.style.borderTop = '1px solid yellow';
+                result.style.borderBottom = '1px dashed white';
+                result.style.background = 'goldenrod';
+                break;
+            case random === 2:
+                result.classList.add('random-3')
+                result.textContent = 'Alice'
+                break;
+            case random === 3:
+                result.classList.add('random-4')
+        }
+            
+    } else {
+        result.textContent = 'Try again'
+    }
+
+    console.log(answer)
+    console.log(process)
 }
+
+onEvent(executeBtn, 'click', answerValidation)
 
